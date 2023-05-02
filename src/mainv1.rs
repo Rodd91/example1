@@ -24,12 +24,11 @@ fn main() {
     let s2 = s1; // Transfer ownership
 
     // This line will cause a compile-time error due to ownership rules
-    println!("s1: {}", s1);
+    //println!("s1: {}", s1);
     // println!("s2: {}", s2);
     
-    //say(s1.as_bytes(), 15, &mut BufWriter::new(stdout().lock())).unwrap();
-    //say(s2.as_bytes(), 15, &mut BufWriter::new(stdout().lock())).unwrap();
-    
+    ferris_says(s1);
+    ferris_says(s2);
     
 
     //-----------------------------------------------------------// Borrowing

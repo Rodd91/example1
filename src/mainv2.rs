@@ -1,15 +1,17 @@
 extern crate ferris_says;
-
 use ferris_says::say;
 use std::io::{stdout, BufWriter};
 
 // Function to print a string using Ferris says
 fn ferris_print(message: &str) {
-    let stdout = stdout();
-    let mut writer = BufWriter::new(stdout.lock());
-
+    let stdout = stdout(); 
+    // Get handle to the standard output stream
+    let mut writer = BufWriter::new(stdout.lock()); 
+    // Wrap the standard output stream in a buffered writer
     let width = message.chars().count();
-    say(message.as_bytes(), width, &mut writer).unwrap();
+    // Count the number of characters in the input message
+    say(message.as_bytes(), width, &mut writer).unwrap(); 
+    // Call the say function with the message as a byte slice, the width of the message, and a mutable reference to the buffered writer. The unwrap method is used to handle any errors returned by say.
 }
 
 
